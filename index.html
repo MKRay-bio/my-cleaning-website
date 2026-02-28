@@ -3,28 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Articpure | Premium Cleaning in Tromsø</title>
-  <meta name="description" content="Articpure provides premium home, office & Airbnb cleaning in Tromsø. Standard, deep clean, move in/out. Fast quotes." />
+  <title>Articpure | Cleaning & Airbnb Turnover in Tromsø</title>
+  <meta name="description" content="Articpure provides professional home, office, move-in/out and Airbnb turnover cleaning in Tromsø. Fast quotes. Reliable results." />
 
-  <meta property="og:title" content="Articpure | Premium Cleaning in Tromsø" />
-  <meta property="og:description" content="Reliable home, office & Airbnb cleaning in Tromsø. Get a fast quote." />
+  <meta property="og:title" content="Articpure | Cleaning in Tromsø" />
+  <meta property="og:description" content="Professional home, office & Airbnb turnover cleaning in Tromsø. Get a fast quote." />
   <meta property="og:type" content="website" />
 
   <style>
     :root{
-      --bg:#070b14;
-      --panel:rgba(255,255,255,.06);
-      --panel2:rgba(255,255,255,.085);
+      --bg:#0b1220;
+      --card:rgba(255,255,255,.07);
       --stroke:rgba(255,255,255,.12);
-      --text:#f4f7ff;
-      --muted:rgba(244,247,255,.72);
+      --text:#f3f7ff;
+      --muted:rgba(243,247,255,.72);
       --brand:#6ad7ff;
       --accent:#7dffcc;
       --shadow: 0 18px 50px rgba(0,0,0,.45);
-      --radius: 18px;
-      --max: 1120px;
+      --radius:18px;
+      --max: 1080px;
     }
-
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
@@ -32,54 +30,56 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(1200px 700px at 15% -10%, rgba(106,215,255,.22), transparent 55%),
-        radial-gradient(900px 600px at 90% 0%, rgba(125,255,204,.16), transparent 60%),
-        radial-gradient(900px 700px at 60% 110%, rgba(106,215,255,.12), transparent 60%),
+        radial-gradient(1200px 700px at 10% -10%, rgba(106,215,255,.22), transparent 55%),
+        radial-gradient(900px 600px at 92% 0%, rgba(125,255,204,.16), transparent 60%),
+        radial-gradient(900px 700px at 60% 110%, rgba(106,215,255,.11), transparent 60%),
         var(--bg);
-      line-height:1.5;
+      line-height:1.55;
     }
     a{color:inherit}
     .wrap{max-width:var(--max); margin:0 auto; padding: 22px}
     .glass{
-      background: var(--panel);
+      background: var(--card);
       border: 1px solid var(--stroke);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
 
+    /* Header */
     header{
       position: sticky; top:0; z-index: 20;
       backdrop-filter: blur(12px);
-      background: rgba(7,11,20,.55);
+      background: rgba(11,18,32,.55);
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
     .topbar{
-      display:flex; align-items:center; justify-content:space-between; gap:16px;
-      padding: 14px 22px;
       max-width: var(--max);
       margin:0 auto;
+      padding: 14px 22px;
+      display:flex; align-items:center; justify-content:space-between; gap: 16px;
     }
     .brand{
       display:flex; align-items:center; gap:12px;
-      font-weight: 900; letter-spacing:.2px;
+      font-weight: 900;
+      letter-spacing:.2px;
     }
     .logo{
       width: 38px; height: 38px; border-radius: 14px;
       background: linear-gradient(135deg, var(--brand), var(--accent));
       box-shadow: 0 12px 30px rgba(0,0,0,.35);
+      flex: 0 0 auto;
     }
     nav a{
       text-decoration:none;
       color: var(--muted);
       margin-left: 14px;
-      font-weight: 700;
+      font-weight: 750;
       font-size: .95rem;
     }
     nav a:hover{color: var(--text)}
-    .navBtns{
-      display:flex; align-items:center; gap:10px;
-    }
+    .navBtns{display:flex; gap:10px; align-items:center}
 
+    /* Buttons */
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding: 11px 14px;
@@ -90,6 +90,7 @@
       background: rgba(255,255,255,.06);
       color: var(--text);
       transition: transform .12s ease;
+      white-space: nowrap;
     }
     .btn:hover{transform: translateY(-1px)}
     .btnPrimary{
@@ -98,23 +99,13 @@
       border: 0;
     }
     .btnSmall{padding: 9px 12px; font-size:.93rem}
-    .btnIcon{gap:8px}
-    .pill{
-      display:inline-flex; align-items:center;
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.05);
-      color: var(--muted);
-      font-weight: 700;
-      font-size: .92rem;
-    }
 
+    /* Hero */
     .hero{
-      padding: 34px 0 14px;
+      padding: 34px 0 10px;
       display:grid;
-      grid-template-columns: 1.3fr .7fr;
-      gap: 18px;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 16px;
       align-items: stretch;
     }
     .heroCard{padding: 22px}
@@ -122,18 +113,32 @@
       margin: 0 0 12px;
       font-size: clamp(30px, 4.2vw, 52px);
       line-height: 1.05;
-      letter-spacing: -.5px;
+      letter-spacing: -.6px;
     }
     .lead{
       margin:0 0 16px;
       color: var(--muted);
-      font-size: 1.08rem;
+      font-size: 1.06rem;
       max-width: 64ch;
     }
+    .kicker{
+      display:inline-flex;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      color: rgba(243,247,255,.85);
+      font-weight: 850;
+      font-size: .92rem;
+      margin-bottom: 12px;
+    }
     .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px}
-    .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top: 16px}
 
-    .heroSide{padding: 18px; display:grid; gap:12px}
+    .heroSide{
+      padding: 18px;
+      display:grid;
+      gap:12px;
+    }
     .mini{
       padding: 14px;
       border-radius: 16px;
@@ -142,49 +147,40 @@
     }
     .mini b{display:block; margin-bottom: 4px}
     .muted{color: var(--muted)}
-    .kicker{
-      font-weight: 900;
-      color: rgba(244,247,255,.9);
-      letter-spacing: .2px;
-    }
 
+    /* Sections */
     section{padding: 14px 0}
-    .sectionTitle{
-      display:flex; align-items:flex-end; justify-content:space-between;
-      gap: 12px; margin-bottom: 10px;
-    }
+    .sectionTitle{margin: 4px 0 10px}
     h2{margin:0; font-size: 1.45rem}
-    .sub{margin:0; color: var(--muted)}
+    .sub{margin:6px 0 0; color: var(--muted)}
+
     .grid{display:grid; gap: 14px}
     .grid4{grid-template-columns: repeat(4, 1fr)}
     .grid3{grid-template-columns: repeat(3, 1fr)}
     .grid2{grid-template-columns: repeat(2, 1fr)}
+
     .card{padding: 16px}
     .card h3{margin: 0 0 6px}
     .card p{margin: 0; color: var(--muted)}
     ul{margin:10px 0 0; padding-left: 18px; color: var(--muted)}
     li{margin: 6px 0}
-    .line{height:1px; background: rgba(255,255,255,.10); margin: 12px 0}
     .tag{
       display:inline-flex;
       padding: 6px 9px;
       border-radius: 999px;
       font-size: .85rem;
-      font-weight: 800;
-      color: rgba(244,247,255,.85);
+      font-weight: 850;
+      color: rgba(243,247,255,.85);
       background: rgba(255,255,255,.06);
       border: 1px solid rgba(255,255,255,.12);
       margin-top: 10px;
     }
+    .line{height:1px; background: rgba(255,255,255,.10); margin: 12px 0}
 
-    .price{
-      font-size: 1.55rem;
-      font-weight: 950;
-      margin: 6px 0 6px;
-      letter-spacing: -.2px;
-    }
-    .price small{font-size: .95rem; font-weight: 800; color: var(--muted)}
-    .note{font-size: .92rem; color: var(--muted)}
+    /* Contact */
+    .contactBlock b{display:block; margin-bottom: 4px}
+    .contactLink{color: rgba(243,247,255,.92); text-decoration:none}
+    .contactLink:hover{text-decoration:underline}
 
     label{display:block; font-weight: 900; margin: 10px 0 6px}
     input, textarea{
@@ -200,20 +196,19 @@
     textarea{min-height: 120px; resize: vertical}
 
     footer{
-      padding: 28px 0 40px;
-      color: rgba(244,247,255,.65);
+      padding: 26px 0 40px;
+      color: rgba(243,247,255,.65);
       font-size: .95rem;
     }
 
+    /* Responsive */
     @media (max-width: 1100px){
       .grid4{grid-template-columns: repeat(2, 1fr)}
     }
     @media (max-width: 980px){
       .hero{grid-template-columns: 1fr}
-      .grid3{grid-template-columns: 1fr}
-      .grid2{grid-template-columns: 1fr}
-      .grid4{grid-template-columns: 1fr}
       nav{display:none}
+      .grid4,.grid3,.grid2{grid-template-columns: 1fr}
     }
   </style>
 </head>
@@ -228,39 +223,41 @@
 
       <nav>
         <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
+        <a href="#why">Why us</a>
         <a href="#reviews">Reviews</a>
         <a href="#contact">Contact</a>
       </nav>
 
       <div class="navBtns">
-        <a class="btn btnSmall" href="tel:+4700000000">Call</a>
+        <a class="btn btnSmall" href="tel:+4796987228">Call</a>
         <a class="btn btnPrimary btnSmall" href="#contact">Free quote</a>
       </div>
     </div>
   </header>
 
   <main class="wrap">
+    <!-- HERO -->
     <section class="hero">
       <div class="glass heroCard">
-        <div class="kicker">Premium cleaning • Tromsø</div>
-        <h1>Spotless spaces — without the stress.</h1>
+        <div class="kicker">Cleaning • Airbnb turnover • Tromsø</div>
+        <h1>Clean spaces, calm mind — done right.</h1>
         <p class="lead">
-          Articpure provides reliable cleaning in Tromsø with a checklist-based approach and attention to detail.
-          Homes, offices, and Airbnb turnovers.
+          Articpure provides professional cleaning in Tromsø for homes, offices, and short-term rentals.
+          We focus on detail, consistency, and clear communication — so you always know what to expect.
         </p>
 
         <div class="ctaRow">
-          <a class="btn btnPrimary btnIcon" href="#contact">Get a free quote</a>
-          <a class="btn btnIcon" href="tel:+4700000000">Call: +47 00 00 00 00</a>
-          <a class="btn btnIcon" href="mailto:hello@articpure.no">Email</a>
+          <a class="btn btnPrimary" href="#contact">Get a free quote</a>
+          <a class="btn" href="tel:+4796987228">Call: +47 969 87 228</a>
+          <a class="btn" href="mailto:mithlesh.hedmark@gmail.com">Email</a>
+          <a class="btn" href="https://wa.me/4741371988" target="_blank" rel="noopener">WhatsApp</a>
         </div>
 
-        <div class="badges">
-          <span class="pill">✅ Supplies included</span>
-          <span class="pill">✅ Eco-friendly options</span>
-          <span class="pill">✅ Flexible scheduling</span>
-          <span class="pill">✅ Trusted local team</span>
+        <div class="ctaRow" style="margin-top:12px">
+          <span class="tag">✅ Supplies included</span>
+          <span class="tag">✅ Eco-friendly options</span>
+          <span class="tag">✅ Flexible scheduling</span>
+          <span class="tag">✅ Airbnb host support</span>
         </div>
       </div>
 
@@ -270,28 +267,27 @@
           <div class="muted">Same-week availability when possible.</div>
         </div>
         <div class="mini">
-          <b>Quality checklist</b>
-          <div class="muted">We clean by room with a clear checklist.</div>
+          <b>Checklist quality</b>
+          <div class="muted">Room-by-room checklist so nothing is missed.</div>
         </div>
         <div class="mini">
-          <b>Turnover-ready</b>
-          <div class="muted">Airbnb resets with linen handling options.</div>
+          <b>Airbnb ready</b>
+          <div class="muted">Turnovers with staging + photo proof on request.</div>
         </div>
       </div>
     </section>
 
+    <!-- SERVICES -->
     <section id="services">
       <div class="sectionTitle">
-        <div>
-          <h2>Services</h2>
-          <p class="sub">Choose a plan or mix & match. We tailor the quote to your space.</p>
-        </div>
+        <h2>Services</h2>
+        <p class="sub">Pick what you need — we’ll tailor the plan to your space.</p>
       </div>
 
       <div class="grid grid4">
         <div class="glass card">
           <h3>Standard Cleaning</h3>
-          <p>Ideal for weekly or bi-weekly maintenance.</p>
+          <p>Perfect for regular maintenance.</p>
           <ul>
             <li>Kitchen & bathrooms</li>
             <li>Dusting & surfaces</li>
@@ -303,9 +299,9 @@
 
         <div class="glass card">
           <h3>Deep Cleaning</h3>
-          <p>Extra detail for buildup and neglected areas.</p>
+          <p>Extra detail for a full reset.</p>
           <ul>
-            <li>Detail edges & corners</li>
+            <li>Edges, corners, detail work</li>
             <li>Extra bathroom focus</li>
             <li>Spot marks & fingerprints</li>
             <li>Add-ons available</li>
@@ -315,7 +311,7 @@
 
         <div class="glass card">
           <h3>Move In / Move Out</h3>
-          <p>Perfect for handovers and inspections.</p>
+          <p>Ideal for handovers and inspections.</p>
           <ul>
             <li>Empty-home clean</li>
             <li>Ready for handover</li>
@@ -327,7 +323,7 @@
 
         <div class="glass card">
           <h3>Airbnb Turnover</h3>
-          <p>Fast resets between guests for short-term rentals.</p>
+          <p>Fast resets between guests.</p>
           <ul>
             <li>Bathroom + kitchen reset</li>
             <li>Fresh beds & staging</li>
@@ -339,93 +335,100 @@
       </div>
     </section>
 
-    <section id="pricing">
+    <!-- WHY US -->
+    <section id="why">
       <div class="glass card">
         <div class="sectionTitle">
-          <div>
-            <h2>Pricing</h2>
-            <p class="sub">Simple starting points — we confirm final price after details.</p>
-          </div>
+          <h2>Why Articpure</h2>
+          <p class="sub">Simple, dependable, and built around quality.</p>
         </div>
 
         <div class="grid grid3">
-          <div class="glass card" style="background:var(--panel2)">
-            <h3>Standard Clean</h3>
-            <div class="price">From NOK ___ <small>/ visit</small></div>
-            <p class="muted">Apartments & houses • Discounts for regular plans.</p>
-            <div class="line"></div>
-            <p class="note">Best value with weekly or bi-weekly scheduling.</p>
+          <div class="glass card" style="background:rgba(255,255,255,.05)">
+            <h3>Reliable & on time</h3>
+            <p>Clear scheduling and straightforward communication.</p>
           </div>
-
-          <div class="glass card" style="background:var(--panel2)">
-            <h3>Deep / Move-Out</h3>
-            <div class="price">From NOK ___ <small>depending on scope</small></div>
-            <p class="muted">Best for first-time cleans and handovers.</p>
-            <div class="line"></div>
-            <p class="note">Send size (m²) and a few photos for a fast quote.</p>
+          <div class="glass card" style="background:rgba(255,255,255,.05)">
+            <h3>Detail-focused</h3>
+            <p>We work from a checklist so results stay consistent.</p>
           </div>
-
-          <div class="glass card" style="background:var(--panel2)">
-            <h3>Airbnb Turnover</h3>
-            <div class="price">From NOK ___ <small>/ turnover</small></div>
-            <p class="muted">Quick, reliable resets between guests.</p>
-            <div class="line"></div>
-            <p class="note">Add linen washing/drying if needed.</p>
+          <div class="glass card" style="background:rgba(255,255,255,.05)">
+            <h3>Local in Tromsø</h3>
+            <p>Flexible options for homes, offices and Airbnb hosts.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- REVIEWS -->
     <section id="reviews">
       <div class="sectionTitle">
-        <div>
-          <h2>Reviews</h2>
-          <p class="sub">A few words from customers in Tromsø.</p>
-        </div>
+        <h2>Reviews</h2>
+        <p class="sub">Replace these with real customer messages when you’re ready.</p>
       </div>
 
       <div class="grid grid3">
         <div class="glass card">
-          <p>“Very thorough — the bathroom and kitchen looked brand new.”</p>
+          <p class="muted">“Very thorough — the kitchen and bathroom looked brand new.”</p>
           <div class="line"></div>
           <b>— Customer</b>
         </div>
         <div class="glass card">
-          <p>“Easy booking, on time, and excellent results. Highly recommend.”</p>
+          <p class="muted">“Easy booking, on time, and excellent results.”</p>
           <div class="line"></div>
           <b>— Customer</b>
         </div>
         <div class="glass card">
-          <p>“Perfect Airbnb turnover — fast, consistent, and great communication.”</p>
+          <p class="muted">“Perfect Airbnb turnover — fast, consistent, and great communication.”</p>
           <div class="line"></div>
           <b>— Host</b>
         </div>
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact">
       <div class="glass card">
         <div class="sectionTitle">
-          <div>
-            <h2>Contact</h2>
-            <p class="sub">Get a fast quote — tell us size, service type, and preferred date.</p>
-          </div>
+          <h2>Contact</h2>
+          <p class="sub">Send a message with service type, size (m²), and preferred date/time.</p>
         </div>
 
         <div class="grid grid2">
-          <div class="glass card" style="background:var(--panel2)">
-            <h3>Articpure — Tromsø</h3>
-            <p class="muted"><b>Phone:</b> <a href="tel:+4700000000">+47 00 00 00 00</a></p>
-            <p class="muted"><b>Email:</b> <a href="mailto:hello@articpure.no">hello@articpure.no</a></p>
-            <p class="muted"><b>Service area:</b> Tromsø + nearby</p>
-            <p class="muted"><b>Hours:</b> Mon–Sat 08:00–18:00</p>
+          <div class="glass card contactBlock" style="background:rgba(255,255,255,.05)">
+            <b>Email</b>
+            <a class="contactLink" href="mailto:mithlesh.hedmark@gmail.com">mithlesh.hedmark@gmail.com</a>
+
             <div class="line"></div>
-            <p class="note">Airbnb hosts: include check-in/check-out time in your message.</p>
+
+            <b>Phone</b>
+            <a class="contactLink" href="tel:+4796987228">+47 969 87 228</a>
+
+            <div class="line"></div>
+
+            <b>WhatsApp</b>
+            <a class="contactLink" href="https://wa.me/4741371988" target="_blank" rel="noopener">+47 413 71 988</a>
+
+            <div class="line"></div>
+
+            <b>Service area</b>
+            <div class="muted">Tromsø + nearby areas</div>
+
+            <div class="line"></div>
+
+            <div class="ctaRow">
+              <a class="btn btnPrimary" href="https://wa.me/4741371988" target="_blank" rel="noopener">Message on WhatsApp</a>
+              <a class="btn" href="tel:+4796987228">Call now</a>
+            </div>
+
+            <p class="muted" style="margin:12px 0 0; font-size:.95rem">
+              Airbnb hosts: include check-in/check-out time and number of beds.
+            </p>
           </div>
 
-          <!-- Demo form (doesn't send yet). Use Formspree to make it send. -->
-          <form class="glass card" style="background:var(--panel2)"
-                onsubmit="alert('This form is not connected yet. Use phone/email or connect Formspree.'); return false;">
+          <!-- Note: Static sites can't send forms without a form service. -->
+          <form class="glass card" style="background:rgba(255,255,255,.05)"
+                onsubmit="alert('This form is not connected yet. Use WhatsApp/email/phone, or connect Formspree to receive messages by email.'); return false;">
             <label for="name">Name</label>
             <input id="name" placeholder="Your name" required />
 
@@ -436,12 +439,12 @@
             <textarea id="msg" placeholder="Service (standard/deep/move-out/Airbnb), size (m²), address (optional), preferred date/time..." required></textarea>
 
             <div class="ctaRow" style="margin-top:12px">
-              <button class="btn btnPrimary" type="submit">Send request</button>
-              <a class="btn" href="tel:+4796987228">Call instead</a>
+              <button class="btn btnPrimary" type="submit">Send</button>
+              <a class="btn" href="mailto:mithlesh.hedmark@gmail.com?subject=Cleaning%20Quote%20Request%20-%20Articpure">Email instead</a>
             </div>
 
-            <p class="note" style="margin-top:10px">
-              Tip: I can help you connect this to a free email form (Formspree) in 3 minutes.
+            <p class="muted" style="margin:10px 0 0; font-size:.95rem">
+              Want this form to actually send? Use free Formspree (I can give you the exact 2-line change).
             </p>
           </form>
         </div>
