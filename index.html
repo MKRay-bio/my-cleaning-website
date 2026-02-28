@@ -62,13 +62,38 @@
       display:flex; align-items:center; gap:12px;
       font-weight: 900;
       letter-spacing:.2px;
+      min-width: 0;
     }
-    .logo{
-      width: 38px; height: 38px; border-radius: 14px;
-      background: linear-gradient(135deg, var(--brand), var(--accent));
-      box-shadow: 0 12px 30px rgba(0,0,0,.35);
+    .brandName{
+      display:flex;
+      flex-direction:column;
+      line-height:1.05;
+      min-width:0;
+    }
+    .brandName strong{
+      font-size: 1.05rem;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brandName span{
+      font-size:.84rem;
+      color: var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brandLogo{
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      object-fit: contain;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.18);
+      padding: 6px;
       flex: 0 0 auto;
     }
+
     nav a{
       text-decoration:none;
       color: var(--muted);
@@ -89,15 +114,16 @@
       border: 1px solid rgba(255,255,255,.14);
       background: rgba(255,255,255,.06);
       color: var(--text);
-      transition: transform .12s ease;
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
       white-space: nowrap;
     }
-    .btn:hover{transform: translateY(-1px)}
+    .btn:hover{transform: translateY(-1px); border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.08)}
     .btnPrimary{
       background: linear-gradient(135deg, var(--brand), var(--accent));
       color: #06101b;
       border: 0;
     }
+    .btnPrimary:hover{background: linear-gradient(135deg, var(--brand), var(--accent))}
     .btnSmall{padding: 9px 12px; font-size:.93rem}
 
     /* Hero */
@@ -133,6 +159,28 @@
       margin-bottom: 12px;
     }
     .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px}
+
+    /* Hero image */
+    .heroMedia{
+      margin-top:16px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+    }
+    .heroMedia img{
+      width:100%;
+      height: 320px;
+      object-fit: cover;
+      display:block;
+    }
+    .heroMedia .caption{
+      padding:10px 12px;
+      font-size: .92rem;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+    }
 
     .heroSide{
       padding: 18px;
@@ -177,6 +225,18 @@
     }
     .line{height:1px; background: rgba(255,255,255,.10); margin: 12px 0}
 
+    /* Service images */
+    .serviceImg{
+      width:100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      margin: 10px 0 10px;
+      object-fit: cover;
+      display:block;
+      background: rgba(255,255,255,.05);
+    }
+
     /* Contact */
     .contactBlock b{display:block; margin-bottom: 4px}
     .contactLink{color: rgba(243,247,255,.92); text-decoration:none}
@@ -209,6 +269,7 @@
       .hero{grid-template-columns: 1fr}
       nav{display:none}
       .grid4,.grid3,.grid2{grid-template-columns: 1fr}
+      .heroMedia img{height: 260px}
     }
   </style>
 </head>
@@ -217,8 +278,11 @@
   <header>
     <div class="topbar">
       <div class="brand">
-        <img src="assets/logo.png" alt="Articpure logo" style="width:38px;height:38px;border-radius:12px;object-fit:cover;border:1px solid rgba(255,255,255,.18)">
-        <div>Articpure</div>
+        <img class="brandLogo" src="assets/logo.png" alt="Articpure logo" />
+        <div class="brandName">
+          <strong>Articpure</strong>
+          <span>Cleaning & Airbnb turnover • Tromsø</span>
+        </div>
       </div>
 
       <nav>
@@ -245,8 +309,12 @@
           Articpure provides professional cleaning in Tromsø for homes, offices, and short-term rentals.
           We focus on detail, consistency, and clear communication — so you always know what to expect.
         </p>
-        <div style="margin-top:16px">
-          <img src="assets/Artic_pure.png" alt="Clean modern home in Tromsø" style="width:100%;border-radius:18px;border:1px solid rgba(255,255,255,.12)">
+
+        <!-- HERO IMAGE -->
+        <div class="heroMedia">
+          <!-- Update the filename below if your hero image has a different name -->
+          <img src="assets/Artic_pure.png" alt="Clean Scandinavian home with Tromsø view" loading="eager" />
+          <div class="caption">High-quality cleaning for homes, offices, and Airbnb turnovers in Tromsø.</div>
         </div>
 
         <div class="ctaRow">
@@ -290,7 +358,7 @@
       <div class="grid grid4">
         <div class="glass card">
           <h3>Standard Cleaning</h3>
-          <img src="assets/artic_pure1.png" alt="Home cleaning" style="width:100%;border-radius:14px;border:1px solid rgba(255,255,255,.12);margin:10px 0 8px">
+          <img class="serviceImg" src="assets/artic_pure1.png" alt="Standard home cleaning" loading="lazy" />
           <p>Perfect for regular maintenance.</p>
           <ul>
             <li>Kitchen & bathrooms</li>
@@ -303,7 +371,7 @@
 
         <div class="glass card">
           <h3>Deep Cleaning</h3>
-          <img src="assets/clean_living_room_1.png" alt="Deep cleaning detail work" style="width:100%;border-radius:14px;border:1px solid rgba(255,255,255,.12);margin:10px 0 8px">
+          <img class="serviceImg" src="assets/clean_living_room_1.png" alt="Deep cleaning detail work" loading="lazy" />
           <p>Extra detail for a full reset.</p>
           <ul>
             <li>Edges, corners, detail work</li>
@@ -316,6 +384,8 @@
 
         <div class="glass card">
           <h3>Move In / Move Out</h3>
+          <!-- Update the filename below to your move image -->
+          <img class="serviceImg" src="assets/artic_move.png" alt="Move in / move out cleaning" loading="lazy" />
           <p>Ideal for handovers and inspections.</p>
           <ul>
             <li>Empty-home clean</li>
@@ -328,6 +398,8 @@
 
         <div class="glass card">
           <h3>Airbnb Turnover</h3>
+          <!-- Update the filename below to your Airbnb image -->
+          <img class="serviceImg" src="assets/artic_airbnb.png" alt="Airbnb turnover cleaning" loading="lazy" />
           <p>Fast resets between guests.</p>
           <ul>
             <li>Bathroom + kitchen reset</li>
@@ -338,6 +410,10 @@
           <div class="tag">Host favorite</div>
         </div>
       </div>
+
+      <p class="muted" style="margin:10px 0 0;font-size:.95rem">
+        Tip: If any service images don’t show, just update the filenames in the code to match what you uploaded in <b>assets/</b>.
+      </p>
     </section>
 
     <!-- WHY US -->
