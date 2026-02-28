@@ -84,8 +84,8 @@
       text-overflow:ellipsis;
     }
     .brandLogo{
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       border-radius: 12px;
       object-fit: contain;
       background: rgba(255,255,255,.06);
@@ -117,7 +117,11 @@
       transition: transform .12s ease, border-color .12s ease, background .12s ease;
       white-space: nowrap;
     }
-    .btn:hover{transform: translateY(-1px); border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.08)}
+    .btn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.22);
+      background: rgba(255,255,255,.08);
+    }
     .btnPrimary{
       background: linear-gradient(135deg, var(--brand), var(--accent));
       color: #06101b;
@@ -174,13 +178,6 @@
       object-fit: cover;
       display:block;
     }
-    .heroMedia .caption{
-      padding:10px 12px;
-      font-size: .92rem;
-      color: var(--muted);
-      border-top: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.18);
-    }
 
     .heroSide{
       padding: 18px;
@@ -203,9 +200,9 @@
     .sub{margin:6px 0 0; color: var(--muted)}
 
     .grid{display:grid; gap: 14px}
-    .grid4{grid-template-columns: repeat(4, 1fr)}
-    .grid3{grid-template-columns: repeat(3, 1fr)}
     .grid2{grid-template-columns: repeat(2, 1fr)}
+    .grid3{grid-template-columns: repeat(3, 1fr)}
+    .grid4{grid-template-columns: repeat(4, 1fr)}
 
     .card{padding: 16px}
     .card h3{margin: 0 0 6px}
@@ -224,18 +221,6 @@
       margin-top: 10px;
     }
     .line{height:1px; background: rgba(255,255,255,.10); margin: 12px 0}
-
-    /* Service images */
-    .serviceImg{
-      width:100%;
-      aspect-ratio: 4 / 3;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.12);
-      margin: 10px 0 10px;
-      object-fit: cover;
-      display:block;
-      background: rgba(255,255,255,.05);
-    }
 
     /* Contact */
     .contactBlock b{display:block; margin-bottom: 4px}
@@ -310,18 +295,21 @@
           We focus on detail, consistency, and clear communication — so you always know what to expect.
         </p>
 
-        <!-- HERO IMAGE -->
+        <!-- FRONT PAGE IMAGE (ONLY IMAGE USED) -->
         <div class="heroMedia">
-          <!-- Update the filename below if your hero image has a different name -->
-          <img src="assets/Artic_pure.png" alt="Clean Scandinavian home with Tromsø view" loading="eager" />
-          <div class="caption">High-quality cleaning for homes, offices, and Airbnb turnovers in Tromsø.</div>
+          <img src="assets/Modern spaces and pristine cleaning.png" alt="Modern spaces and pristine cleaning" loading="eager" />
         </div>
 
         <div class="ctaRow">
           <a class="btn btnPrimary" href="#contact">Get a free quote</a>
+
+          <!-- Phone #1 for call + WhatsApp -->
           <a class="btn" href="tel:+4796987228">Call: +47 969 87 228</a>
-          <a class="btn" href="mailto:mithlesh.hedmark@gmail.com">Email</a>
-          <a class="btn" href="https://wa.me/4741371988" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn" href="https://wa.me/4796987228" target="_blank" rel="noopener">WhatsApp: +47 969 87 228</a>
+
+          <!-- Phone #2 for call + WhatsApp -->
+          <a class="btn" href="tel:+4741371988">Call: +47 413 71 988</a>
+          <a class="btn" href="https://wa.me/4741371988" target="_blank" rel="noopener">WhatsApp: +47 413 71 988</a>
         </div>
 
         <div class="ctaRow" style="margin-top:12px">
@@ -355,10 +343,10 @@
         <p class="sub">Pick what you need — we’ll tailor the plan to your space.</p>
       </div>
 
+      <!-- No extra images here (per your request) -->
       <div class="grid grid4">
         <div class="glass card">
           <h3>Standard Cleaning</h3>
-          <img class="serviceImg" src="assets/artic_pure1.png" alt="Standard home cleaning" loading="lazy" />
           <p>Perfect for regular maintenance.</p>
           <ul>
             <li>Kitchen & bathrooms</li>
@@ -371,7 +359,6 @@
 
         <div class="glass card">
           <h3>Deep Cleaning</h3>
-          <img class="serviceImg" src="assets/clean_living_room_1.png" alt="Deep cleaning detail work" loading="lazy" />
           <p>Extra detail for a full reset.</p>
           <ul>
             <li>Edges, corners, detail work</li>
@@ -384,8 +371,6 @@
 
         <div class="glass card">
           <h3>Move In / Move Out</h3>
-          <!-- Update the filename below to your move image -->
-          <img class="serviceImg" src="assets/artic_move.png" alt="Move in / move out cleaning" loading="lazy" />
           <p>Ideal for handovers and inspections.</p>
           <ul>
             <li>Empty-home clean</li>
@@ -398,8 +383,6 @@
 
         <div class="glass card">
           <h3>Airbnb Turnover</h3>
-          <!-- Update the filename below to your Airbnb image -->
-          <img class="serviceImg" src="assets/artic_airbnb.png" alt="Airbnb turnover cleaning" loading="lazy" />
           <p>Fast resets between guests.</p>
           <ul>
             <li>Bathroom + kitchen reset</li>
@@ -410,10 +393,6 @@
           <div class="tag">Host favorite</div>
         </div>
       </div>
-
-      <p class="muted" style="margin:10px 0 0;font-size:.95rem">
-        Tip: If any service images don’t show, just update the filenames in the code to match what you uploaded in <b>assets/</b>.
-      </p>
     </section>
 
     <!-- WHY US -->
@@ -482,13 +461,17 @@
 
             <div class="line"></div>
 
-            <b>Phone</b>
-            <a class="contactLink" href="tel:+4796987228">+47 969 87 228</a>
-
-            <div class="line"></div>
-
-            <b>WhatsApp</b>
-            <a class="contactLink" href="https://wa.me/4741371988" target="_blank" rel="noopener">+47 413 71 988</a>
+            <b>Call / WhatsApp</b>
+            <div class="muted">
+              <a class="contactLink" href="tel:+4796987228">+47 969 87 228</a>
+              <span class="muted"> • </span>
+              <a class="contactLink" href="https://wa.me/4796987228" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+            <div class="muted" style="margin-top:8px">
+              <a class="contactLink" href="tel:+4741371988">+47 413 71 988</a>
+              <span class="muted"> • </span>
+              <a class="contactLink" href="https://wa.me/4741371988" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
 
             <div class="line"></div>
 
@@ -498,8 +481,8 @@
             <div class="line"></div>
 
             <div class="ctaRow">
-              <a class="btn btnPrimary" href="https://wa.me/4741371988" target="_blank" rel="noopener">Message on WhatsApp</a>
-              <a class="btn" href="tel:+4796987228">Call now</a>
+              <a class="btn btnPrimary" href="https://wa.me/4796987228" target="_blank" rel="noopener">WhatsApp (969 87 228)</a>
+              <a class="btn" href="https://wa.me/4741371988" target="_blank" rel="noopener">WhatsApp (413 71 988)</a>
             </div>
 
             <p class="muted" style="margin:12px 0 0; font-size:.95rem">
@@ -509,7 +492,7 @@
 
           <!-- Note: Static sites can't send forms without a form service. -->
           <form class="glass card" style="background:rgba(255,255,255,.05)"
-                onsubmit="alert('This form is not connected yet. Use WhatsApp/email/phone, or connect Formspree to receive messages by email.'); return false;">
+                onsubmit="alert('This form is not connected yet. Use WhatsApp, call, or email. If you want, I can help you connect Formspree so this form sends to your email.'); return false;">
             <label for="name">Name</label>
             <input id="name" placeholder="Your name" required />
 
