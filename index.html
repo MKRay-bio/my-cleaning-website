@@ -3,26 +3,31 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Articpure | Cleaning & Airbnb Turnover in Tromsø</title>
-  <meta name="description" content="Articpure provides professional home, office, move-in/out and Airbnb turnover cleaning in Tromsø. Fast quotes. Reliable results." />
+  <title>Articpure | Premium Cleaning & Airbnb Turnover in Tromsø</title>
+  <meta name="description" content="Articpure provides premium home, office, move-in/out and Airbnb turnover cleaning in Tromsø. Fast quotes. Reliable results." />
 
-  <meta property="og:title" content="Articpure | Cleaning in Tromsø" />
-  <meta property="og:description" content="Professional home, office & Airbnb turnover cleaning in Tromsø. Get a fast quote." />
+  <meta property="og:title" content="Articpure | Premium Cleaning in Tromsø" />
+  <meta property="og:description" content="Premium home, office & Airbnb turnover cleaning in Tromsø. Get a fast quote." />
   <meta property="og:type" content="website" />
 
   <style>
     :root{
       --bg:#0b1220;
       --card:rgba(255,255,255,.07);
+      --card2:rgba(255,255,255,.05);
       --stroke:rgba(255,255,255,.12);
+      --stroke2:rgba(255,255,255,.16);
       --text:#f3f7ff;
       --muted:rgba(243,247,255,.72);
       --brand:#6ad7ff;
       --accent:#7dffcc;
-      --shadow: 0 18px 50px rgba(0,0,0,.45);
+      --shadow: 0 18px 55px rgba(0,0,0,.52);
+      --shadow2: 0 10px 30px rgba(0,0,0,.35);
       --radius:18px;
-      --max: 1080px;
+      --radius2:24px;
+      --max: 1100px;
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
@@ -30,7 +35,7 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(1200px 700px at 10% -10%, rgba(106,215,255,.22), transparent 55%),
+        radial-gradient(1100px 700px at 12% -10%, rgba(106,215,255,.22), transparent 55%),
         radial-gradient(900px 600px at 92% 0%, rgba(125,255,204,.16), transparent 60%),
         radial-gradient(900px 700px at 60% 110%, rgba(106,215,255,.11), transparent 60%),
         var(--bg);
@@ -41,10 +46,11 @@
     .glass{
       background: var(--card);
       border: 1px solid var(--stroke);
-      border-radius: var(--radius);
+      border-radius: var(--radius2);
       box-shadow: var(--shadow);
     }
 
+    /* ===== Header ===== */
     header{
       position: sticky; top:0; z-index: 20;
       backdrop-filter: blur(12px);
@@ -63,17 +69,26 @@
       letter-spacing:.2px;
       min-width: 0;
     }
+    .brandLogo{
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      object-fit: contain;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.18);
+      padding: 7px;
+      flex: 0 0 auto;
+      box-shadow: var(--shadow2);
+    }
     .brandName{
-      display:flex;
-      flex-direction:column;
-      line-height:1.05;
-      min-width:0;
+      display:flex; flex-direction:column; line-height:1.05; min-width:0;
     }
     .brandName strong{
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
+      letter-spacing: .2px;
     }
     .brandName span{
       font-size:.84rem;
@@ -82,38 +97,29 @@
       overflow:hidden;
       text-overflow:ellipsis;
     }
-    .brandLogo{
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      object-fit: contain;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.18);
-      padding: 6px;
-      flex: 0 0 auto;
-    }
-
     nav a{
       text-decoration:none;
       color: var(--muted);
       margin-left: 14px;
-      font-weight: 750;
+      font-weight: 780;
       font-size: .95rem;
     }
     nav a:hover{color: var(--text)}
     .navBtns{display:flex; gap:10px; align-items:center}
 
+    /* ===== Buttons ===== */
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding: 11px 14px;
       border-radius: 14px;
       text-decoration:none;
-      font-weight: 900;
+      font-weight: 950;
       border: 1px solid rgba(255,255,255,.14);
       background: rgba(255,255,255,.06);
       color: var(--text);
       transition: transform .12s ease, border-color .12s ease, background .12s ease;
       white-space: nowrap;
+      box-shadow: 0 10px 24px rgba(0,0,0,.20);
     }
     .btn:hover{
       transform: translateY(-1px);
@@ -124,29 +130,19 @@
       background: linear-gradient(135deg, var(--brand), var(--accent));
       color: #06101b;
       border: 0;
+      box-shadow: 0 18px 38px rgba(0,0,0,.35);
     }
     .btnSmall{padding: 9px 12px; font-size:.93rem}
 
+    /* ===== Hero ===== */
     .hero{
       padding: 34px 0 10px;
       display:grid;
-      grid-template-columns: 1.25fr .75fr;
+      grid-template-columns: 1.15fr .85fr;
       gap: 16px;
       align-items: stretch;
     }
     .heroCard{padding: 22px}
-    h1{
-      margin: 0 0 12px;
-      font-size: clamp(30px, 4.2vw, 52px);
-      line-height: 1.05;
-      letter-spacing: -.6px;
-    }
-    .lead{
-      margin:0 0 16px;
-      color: var(--muted);
-      font-size: 1.06rem;
-      max-width: 64ch;
-    }
     .kicker{
       display:inline-flex;
       padding: 7px 10px;
@@ -154,33 +150,78 @@
       border: 1px solid rgba(255,255,255,.14);
       background: rgba(255,255,255,.05);
       color: rgba(243,247,255,.85);
-      font-weight: 850;
+      font-weight: 900;
       font-size: .92rem;
       margin-bottom: 12px;
     }
+    h1{
+      margin: 0 0 12px;
+      font-size: clamp(32px, 4.4vw, 56px);
+      line-height: 1.03;
+      letter-spacing: -1px;
+    }
+    .lead{
+      margin:0 0 16px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 66ch;
+    }
     .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px}
+    .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top: 14px}
+    .chip{
+      display:inline-flex;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: .88rem;
+      font-weight: 850;
+      color: rgba(243,247,255,.85);
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+    }
 
     /* Hero media (premium look) */
     .heroMedia{
       margin-top:16px;
-      border-radius: 18px;
+      border-radius: 20px;
       overflow: hidden;
       border: 1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.05);
       position: relative;
+      box-shadow: var(--shadow2);
     }
     .heroMedia::after{
       content:"";
       position:absolute; inset:0;
-      background: linear-gradient(180deg, rgba(11,18,32,.05), rgba(11,18,32,.55));
+      background:
+        linear-gradient(180deg, rgba(11,18,32,.05), rgba(11,18,32,.62));
       pointer-events:none;
     }
     .heroMedia img{
       width:100%;
-      height: 340px;
+      height: 360px;
       object-fit: cover;
       display:block;
-      filter: saturate(1.05) contrast(1.04);
+      filter: saturate(1.08) contrast(1.05);
+      transform: scale(1.01);
+    }
+    .heroMedia .label{
+      position:absolute;
+      left: 14px;
+      bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(0,0,0,.35);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(10px);
+      font-weight: 900;
+      font-size: .95rem;
+    }
+    .heroMedia .label span{
+      display:block;
+      font-weight: 800;
+      color: rgba(243,247,255,.75);
+      font-size: .88rem;
+      margin-top: 2px;
     }
 
     .heroSide{
@@ -190,18 +231,20 @@
     }
     .mini{
       padding: 14px;
-      border-radius: 16px;
+      border-radius: 18px;
       background: rgba(255,255,255,.05);
       border: 1px solid rgba(255,255,255,.10);
+      box-shadow: 0 12px 28px rgba(0,0,0,.22);
     }
     .mini b{display:block; margin-bottom: 4px}
     .muted{color: var(--muted)}
     .contactLink{color: rgba(243,247,255,.92); text-decoration:none}
     .contactLink:hover{text-decoration:underline}
 
+    /* ===== Sections ===== */
     section{padding: 14px 0}
     .sectionTitle{margin: 4px 0 10px}
-    h2{margin:0; font-size: 1.45rem}
+    h2{margin:0; font-size: 1.55rem; letter-spacing: -.2px}
     .sub{margin:6px 0 0; color: var(--muted)}
     .grid{display:grid; gap: 14px}
     .grid2{grid-template-columns: repeat(2, 1fr)}
@@ -212,35 +255,38 @@
     .card p{margin: 0; color: var(--muted)}
     ul{margin:10px 0 0; padding-left: 18px; color: var(--muted)}
     li{margin: 6px 0}
-    .tag{
-      display:inline-flex;
-      padding: 6px 9px;
-      border-radius: 999px;
-      font-size: .85rem;
-      font-weight: 850;
-      color: rgba(243,247,255,.85);
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
-      margin-top: 10px;
-    }
+
     .line{height:1px; background: rgba(255,255,255,.10); margin: 12px 0}
 
-    /* Secondary image section */
+    /* ===== Feature image (fit fully) =====
+       Uses object-fit: contain so the whole Articpure.avif is visible (no cropping).
+    */
     .featureMedia{
-      border-radius: 18px;
+      border-radius: 20px;
       overflow: hidden;
       border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
+      background: rgba(0,0,0,.18);
+      box-shadow: var(--shadow2);
+    }
+    .featureMedia .frame{
+      width: 100%;
+      height: 360px;              /* adjust if you want taller/shorter */
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: rgba(255,255,255,.04);
     }
     .featureMedia img{
-      width:100%;
-      height: 260px;
-      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;        /* show full image */
       display:block;
+      padding: 10px;              /* small breathing room */
+      filter: saturate(1.03) contrast(1.02);
     }
 
-    /* Form */
-    label{display:block; font-weight: 900; margin: 10px 0 6px}
+    /* ===== Form ===== */
+    label{display:block; font-weight: 950; margin: 10px 0 6px}
     input, textarea{
       width: 100%;
       padding: 12px;
@@ -251,12 +297,19 @@
       outline:none;
       font: inherit;
     }
+    input:focus, textarea:focus{
+      border-color: rgba(125,255,204,.38);
+      box-shadow: 0 0 0 4px rgba(125,255,204,.12);
+    }
     textarea{min-height: 120px; resize: vertical}
 
-    footer{
-      padding: 26px 0 40px;
-      color: rgba(243,247,255,.65);
-      font-size: .95rem;
+    /* Reviews placeholder (empty area) */
+    .reviewsEmpty{
+      padding:18px;
+      min-height: 110px;
+      background: rgba(255,255,255,.05);
+      border-radius: 20px;
+      border: 1px dashed rgba(255,255,255,.18);
     }
 
     /* Sticky WhatsApp */
@@ -274,16 +327,20 @@
       font-weight: 950;
       color:#06101b;
       background: linear-gradient(135deg, var(--brand), var(--accent));
-      box-shadow: 0 18px 50px rgba(0,0,0,.45);
+      box-shadow: 0 18px 55px rgba(0,0,0,.55);
     }
-    .stickyWA span{
-      display:inline-block;
-      width: 14px;
-      height: 14px;
-      border-radius: 4px;
+    .stickyWA .dot{
+      width: 14px; height: 14px;
+      border-radius: 5px;
       background: rgba(6,16,27,.18);
     }
     .stickyWA small{font-weight: 900; opacity: .82}
+
+    footer{
+      padding: 26px 0 40px;
+      color: rgba(243,247,255,.65);
+      font-size: .95rem;
+    }
 
     @media (max-width: 1100px){
       .grid4{grid-template-columns: repeat(2, 1fr)}
@@ -292,8 +349,8 @@
       .hero{grid-template-columns: 1fr}
       nav{display:none}
       .grid4,.grid3,.grid2{grid-template-columns: 1fr}
-      .heroMedia img{height: 260px}
-      .featureMedia img{height: 220px}
+      .heroMedia img{height: 280px}
+      .featureMedia .frame{height: 280px}
       .stickyWA{right: 14px; bottom: 14px}
     }
   </style>
@@ -303,16 +360,16 @@
   <header>
     <div class="topbar">
       <div class="brand">
-        <img class="brandLogo" src="assets/logo.png?v=3" alt="Articpure logo" />
+        <img class="brandLogo" src="assets/logo.png?v=7" alt="Articpure logo" />
         <div class="brandName">
           <strong>Articpure</strong>
-          <span>Cleaning & Airbnb turnover • Tromsø</span>
+          <span>Premium cleaning • Tromsø</span>
         </div>
       </div>
 
       <nav>
         <a href="#services">Services</a>
-        <a href="#why">Why us</a>
+        <a href="#work">Our work</a>
         <a href="#reviews">Reviews</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -328,15 +385,19 @@
     <!-- HERO -->
     <section class="hero">
       <div class="glass heroCard">
-        <div class="kicker">Cleaning • Airbnb turnover • Tromsø</div>
-        <h1>Clean spaces, calm mind — done right.</h1>
+        <div class="kicker">Airbnb turnover • Homes • Offices</div>
+        <h1>Premium cleaning that feels effortless.</h1>
         <p class="lead">
-          Articpure provides professional cleaning in Tromsø for homes, offices, and short-term rentals.
-          We focus on detail, consistency, and clear communication — so you always know what to expect.
+          Articpure delivers consistent, detail-focused cleaning in Tromsø — for homes, offices, and short-term rentals.
+          Clear communication. Reliable results. A fresh finish every time.
         </p>
 
         <div class="heroMedia">
-          <img src="assets/hero.png?v=3" alt="Modern spaces and pristine cleaning" loading="eager" />
+          <img src="assets/hero.png?v=7" alt="Modern spaces and pristine cleaning" loading="eager" />
+          <div class="label">
+            Fast quotes • Flexible scheduling
+            <span>Message us on WhatsApp for the quickest reply</span>
+          </div>
         </div>
 
         <!-- Cleaner CTA buttons (shorter) -->
@@ -351,11 +412,11 @@
           <a class="contactLink" href="https://wa.me/4741371988" target="_blank" rel="noopener">WhatsApp</a>
         </p>
 
-        <div class="ctaRow" style="margin-top:12px">
-          <span class="tag">✅ Supplies included</span>
-          <span class="tag">✅ Eco-friendly options</span>
-          <span class="tag">✅ Flexible scheduling</span>
-          <span class="tag">✅ Airbnb host support</span>
+        <div class="chips">
+          <span class="chip">✅ Supplies included</span>
+          <span class="chip">✅ Eco-friendly options</span>
+          <span class="chip">✅ Airbnb host support</span>
+          <span class="chip">✅ Tromsø + nearby</span>
         </div>
       </div>
 
@@ -372,19 +433,30 @@
           <b>Airbnb ready</b>
           <div class="muted">Turnovers with staging + photo proof on request.</div>
         </div>
+        <div class="mini">
+          <b>Clear communication</b>
+          <div class="muted">Quick replies via WhatsApp and email.</div>
+        </div>
       </div>
     </section>
 
-    <!-- EXTRA IMAGE (Articpure.avif) -->
-    <section id="gallery">
-      <div class="glass card">
+    <!-- OUR WORK (Articpure.avif full visible) -->
+    <section id="work">
+      <div class="glass card" style="padding:18px">
         <div class="sectionTitle">
           <h2>Our work</h2>
-          <p class="sub">A clean finish that feels fresh and welcoming.</p>
+          <p class="sub">A clean finish that feels fresh, calm, and welcoming.</p>
         </div>
+
         <div class="featureMedia">
-          <img src="assets/Articpure.avif?v=3" alt="Articpure cleaning result" loading="lazy" />
+          <div class="frame">
+            <img src="assets/Articpure.avif?v=7" alt="Articpure cleaning result" loading="lazy" />
+          </div>
         </div>
+
+        <p class="muted" style="margin:12px 0 0; font-size:.95rem">
+          Note: This image is shown fully (no cropping). If you prefer a more dramatic “full-bleed” look, tell me and I’ll switch it to cover.
+        </p>
       </div>
     </section>
 
@@ -392,7 +464,7 @@
     <section id="services">
       <div class="sectionTitle">
         <h2>Services</h2>
-        <p class="sub">Pick what you need — we’ll tailor the plan to your space.</p>
+        <p class="sub">Choose what you need — we tailor the plan to your space.</p>
       </div>
 
       <div class="grid grid4">
@@ -405,7 +477,6 @@
             <li>Vacuum & mop floors</li>
             <li>Trash & tidy-up</li>
           </ul>
-          <div class="tag">Most popular</div>
         </div>
 
         <div class="glass card">
@@ -417,7 +488,6 @@
             <li>Spot marks & fingerprints</li>
             <li>Add-ons available</li>
           </ul>
-          <div class="tag">Best first visit</div>
         </div>
 
         <div class="glass card">
@@ -429,7 +499,6 @@
             <li>Optional inside cabinets</li>
             <li>Optional appliances</li>
           </ul>
-          <div class="tag">Handover ready</div>
         </div>
 
         <div class="glass card">
@@ -441,7 +510,6 @@
             <li>Restock check (by list)</li>
             <li>Photo proof on request</li>
           </ul>
-          <div class="tag">Host favorite</div>
         </div>
       </div>
     </section>
@@ -471,23 +539,23 @@
       </div>
     </section>
 
-    <!-- REVIEWS EMPTY -->
+    <!-- REVIEWS (EMPTY for real customers) -->
     <section id="reviews">
       <div class="sectionTitle">
         <h2>Reviews</h2>
-        <p class="sub">Add your real customer reviews here.</p>
+        <p class="sub">Add real customer reviews here.</p>
       </div>
-      <div class="glass card" style="padding:18px; min-height:90px; background:rgba(255,255,255,.05)">
+      <div class="reviewsEmpty">
         <!-- Add real reviews here later -->
       </div>
     </section>
 
-    <!-- CONTACT (Form sends to email via Formspree) -->
+    <!-- CONTACT (Formspree form) -->
     <section id="contact">
       <div class="glass card">
         <div class="sectionTitle">
           <h2>Contact</h2>
-          <p class="sub">Send a message with service type, size (m²), and preferred date/time.</p>
+          <p class="sub">Tell us the service type, size (m²), and preferred date/time.</p>
         </div>
 
         <div class="grid grid2">
@@ -519,7 +587,7 @@
             </p>
           </div>
 
-          <!-- IMPORTANT: Replace the action URL with your Formspree form endpoint -->
+          <!-- Your Formspree endpoint is already connected. Keep your action URL here. -->
           <form class="glass card" style="background:rgba(255,255,255,.05)"
                 action=https://formspree.io/f/xeelwrrg
                 method="POST">
@@ -532,20 +600,24 @@
             <label for="service">Service</label>
             <input id="service" name="service" placeholder="Standard / Deep / Move-out / Airbnb" />
 
-            <label for="msg">Message</label>
-            <textarea id="msg" name="message" placeholder="Size (m²), address (optional), preferred date/time..." required></textarea>
+            <label for="size">Size (m²)</label>
+            <input id="size" name="size" placeholder="Example: 55" />
 
-            <!-- Helpful info in the email -->
+            <label for="when">Preferred date/time</label>
+            <input id="when" name="preferred_time" placeholder="Example: Tue 10:00 or Friday afternoon" />
+
+            <label for="msg">Message</label>
+            <textarea id="msg" name="message" placeholder="Anything we should know? (pets, key pickup, special requests...)" required></textarea>
+
             <input type="hidden" name="_subject" value="New quote request — Articpure" />
-            <input type="hidden" name="_replyto" value="%email%" />
 
             <div class="ctaRow" style="margin-top:12px">
-              <button class="btn btnPrimary" type="submit">Send</button>
+              <button class="btn btnPrimary" type="submit">Send request</button>
               <a class="btn" href="https://wa.me/4796987228" target="_blank" rel="noopener">WhatsApp instead</a>
             </div>
 
             <p class="muted" style="margin:10px 0 0; font-size:.95rem">
-              Tip: After you create your Formspree form, replace <b>PUT_YOUR_FORM_ID_HERE</b> in the action URL.
+              We usually reply quickly. For fastest response, use WhatsApp.
             </p>
           </form>
         </div>
@@ -560,7 +632,7 @@
 
   <!-- Sticky WhatsApp button -->
   <a class="stickyWA" href="https://wa.me/4796987228" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-    <span aria-hidden="true"></span>
+    <span class="dot" aria-hidden="true"></span>
     WhatsApp <small>Quote</small>
   </a>
 
