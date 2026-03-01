@@ -14,9 +14,7 @@
     :root{
       --bg:#0b1220;
       --card:rgba(255,255,255,.07);
-      --card2:rgba(255,255,255,.05);
       --stroke:rgba(255,255,255,.12);
-      --stroke2:rgba(255,255,255,.16);
       --text:#f3f7ff;
       --muted:rgba(243,247,255,.72);
       --brand:#6ad7ff;
@@ -50,7 +48,7 @@
       box-shadow: var(--shadow);
     }
 
-    /* ===== Header ===== */
+    /* Header */
     header{
       position: sticky; top:0; z-index: 20;
       backdrop-filter: blur(12px);
@@ -107,7 +105,7 @@
     nav a:hover{color: var(--text)}
     .navBtns{display:flex; gap:10px; align-items:center}
 
-    /* ===== Buttons ===== */
+    /* Buttons */
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding: 11px 14px;
@@ -134,7 +132,7 @@
     }
     .btnSmall{padding: 9px 12px; font-size:.93rem}
 
-    /* ===== Hero ===== */
+    /* Hero */
     .hero{
       padding: 34px 0 10px;
       display:grid;
@@ -179,7 +177,7 @@
       border: 1px solid rgba(255,255,255,.12);
     }
 
-    /* Hero media (premium look) */
+    /* Hero media (premium look) — NO TEXT OVERLAY */
     .heroMedia{
       margin-top:16px;
       border-radius: 20px;
@@ -192,8 +190,7 @@
     .heroMedia::after{
       content:"";
       position:absolute; inset:0;
-      background:
-        linear-gradient(180deg, rgba(11,18,32,.05), rgba(11,18,32,.62));
+      background: linear-gradient(180deg, rgba(11,18,32,.04), rgba(11,18,32,.45));
       pointer-events:none;
     }
     .heroMedia img{
@@ -203,25 +200,6 @@
       display:block;
       filter: saturate(1.08) contrast(1.05);
       transform: scale(1.01);
-    }
-    .heroMedia .label{
-      position:absolute;
-      left: 14px;
-      bottom: 14px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      background: rgba(0,0,0,.35);
-      border: 1px solid rgba(255,255,255,.12);
-      backdrop-filter: blur(10px);
-      font-weight: 900;
-      font-size: .95rem;
-    }
-    .heroMedia .label span{
-      display:block;
-      font-weight: 800;
-      color: rgba(243,247,255,.75);
-      font-size: .88rem;
-      margin-top: 2px;
     }
 
     .heroSide{
@@ -241,7 +219,7 @@
     .contactLink{color: rgba(243,247,255,.92); text-decoration:none}
     .contactLink:hover{text-decoration:underline}
 
-    /* ===== Sections ===== */
+    /* Sections */
     section{padding: 14px 0}
     .sectionTitle{margin: 4px 0 10px}
     h2{margin:0; font-size: 1.55rem; letter-spacing: -.2px}
@@ -258,9 +236,7 @@
 
     .line{height:1px; background: rgba(255,255,255,.10); margin: 12px 0}
 
-    /* ===== Feature image (fit fully) =====
-       Uses object-fit: contain so the whole Articpure.avif is visible (no cropping).
-    */
+    /* Feature image (fit fully) */
     .featureMedia{
       border-radius: 20px;
       overflow: hidden;
@@ -270,7 +246,7 @@
     }
     .featureMedia .frame{
       width: 100%;
-      height: 360px;              /* adjust if you want taller/shorter */
+      height: 360px;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -279,13 +255,56 @@
     .featureMedia img{
       width: 100%;
       height: 100%;
-      object-fit: contain;        /* show full image */
+      object-fit: contain; /* shows full image */
       display:block;
-      padding: 10px;              /* small breathing room */
+      padding: 10px;
       filter: saturate(1.03) contrast(1.02);
     }
 
-    /* ===== Form ===== */
+    /* ===== Reviews with star rating + comment ===== */
+    .reviewCard{
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 20px;
+      padding: 16px;
+      box-shadow: 0 12px 28px rgba(0,0,0,.18);
+    }
+    .stars{
+      display:flex;
+      gap:6px;
+      align-items:center;
+      margin-bottom: 10px;
+      user-select:none;
+    }
+    .stars label{
+      margin:0;
+      cursor:pointer;
+      font-size: 1.15rem;
+      line-height:1;
+      opacity: .45;
+      transition: transform .12s ease, opacity .12s ease;
+    }
+    .stars label:hover{ transform: translateY(-1px); opacity: .8; }
+    .stars input{ display:none; }
+    /* Highlight selected stars */
+    .stars input:checked ~ label{ opacity: .25; } /* default dim to right */
+    .stars label.selected{ opacity: .95; }       /* we set via JS */
+    .reviewQuote{
+      margin:0;
+      color: rgba(243,247,255,.78);
+      font-size: 1.02rem;
+    }
+    .reviewMeta{
+      margin-top: 12px;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      color: rgba(243,247,255,.62);
+      font-weight: 850;
+      font-size: .92rem;
+    }
+
+    /* Form */
     label{display:block; font-weight: 950; margin: 10px 0 6px}
     input, textarea{
       width: 100%;
@@ -302,15 +321,6 @@
       box-shadow: 0 0 0 4px rgba(125,255,204,.12);
     }
     textarea{min-height: 120px; resize: vertical}
-
-    /* Reviews placeholder (empty area) */
-    .reviewsEmpty{
-      padding:18px;
-      min-height: 110px;
-      background: rgba(255,255,255,.05);
-      border-radius: 20px;
-      border: 1px dashed rgba(255,255,255,.18);
-    }
 
     /* Sticky WhatsApp */
     .stickyWA{
@@ -360,7 +370,7 @@
   <header>
     <div class="topbar">
       <div class="brand">
-        <img class="brandLogo" src="assets/logo.png?v=7" alt="Articpure logo" />
+        <img class="brandLogo" src="assets/logo.png?v=10" alt="Articpure logo" />
         <div class="brandName">
           <strong>Articpure</strong>
           <span>Premium cleaning • Tromsø</span>
@@ -393,19 +403,15 @@
         </p>
 
         <div class="heroMedia">
-          <img src="assets/hero.png?v=7" alt="Modern spaces and pristine cleaning" loading="eager" />
-          <div class="label">
-            Fast quotes • Flexible scheduling
-            <span>Message us on WhatsApp for the quickest reply</span>
-          </div>
+          <img src="assets/hero.png?v=10" alt="Modern spaces and pristine cleaning" loading="eager" />
         </div>
 
-        <!-- Cleaner CTA buttons (shorter) -->
         <div class="ctaRow">
           <a class="btn btnPrimary" href="https://wa.me/4796987228" target="_blank" rel="noopener">WhatsApp for Quote</a>
           <a class="btn" href="tel:+4796987228">Call: +47 969 87 228</a>
           <a class="btn" href="mailto:mithlesh.hedmark@gmail.com">Email</a>
         </div>
+
         <p class="muted" style="margin:10px 0 0">
           Second number:
           <a class="contactLink" href="tel:+4741371988">+47 413 71 988</a> •
@@ -440,7 +446,7 @@
       </div>
     </section>
 
-    <!-- OUR WORK (Articpure.avif full visible) -->
+    <!-- OUR WORK -->
     <section id="work">
       <div class="glass card" style="padding:18px">
         <div class="sectionTitle">
@@ -450,13 +456,9 @@
 
         <div class="featureMedia">
           <div class="frame">
-            <img src="assets/Articpure.avif?v=7" alt="Articpure cleaning result" loading="lazy" />
+            <img src="assets/Articpure.avif?v=10" alt="Articpure cleaning result" loading="lazy" />
           </div>
         </div>
-
-        <p class="muted" style="margin:12px 0 0; font-size:.95rem">
-          Note: This image is shown fully (no cropping). If you prefer a more dramatic “full-bleed” look, tell me and I’ll switch it to cover.
-        </p>
       </div>
     </section>
 
@@ -514,7 +516,7 @@
       </div>
     </section>
 
-    <!-- WHY US -->
+    <!-- WHY -->
     <section id="why">
       <div class="glass card">
         <div class="sectionTitle">
@@ -539,18 +541,72 @@
       </div>
     </section>
 
-    <!-- REVIEWS (EMPTY for real customers) -->
+    <!-- REVIEWS (editable + star rating + comment) -->
     <section id="reviews">
       <div class="sectionTitle">
         <h2>Reviews</h2>
-        <p class="sub">Add real customer reviews here.</p>
+        <p class="sub">Add real customer reviews here (stars + comment). Edit this section anytime in index.html.</p>
       </div>
-      <div class="reviewsEmpty">
-        <!-- Add real reviews here later -->
+
+      <div class="grid grid3">
+        <!-- Review 1 -->
+        <div class="reviewCard">
+          <div class="stars" data-stars="5" aria-label="5 star rating">
+            <span class="muted" style="font-weight:900;margin-right:8px">Rating:</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+          </div>
+          <p class="reviewQuote">“Write the customer comment here.”</p>
+          <div class="reviewMeta">
+            <span>— Customer name</span>
+            <span>Service</span>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="reviewCard">
+          <div class="stars" data-stars="5" aria-label="5 star rating">
+            <span class="muted" style="font-weight:900;margin-right:8px">Rating:</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+          </div>
+          <p class="reviewQuote">“Write the customer comment here.”</p>
+          <div class="reviewMeta">
+            <span>— Customer name</span>
+            <span>Service</span>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="reviewCard">
+          <div class="stars" data-stars="5" aria-label="5 star rating">
+            <span class="muted" style="font-weight:900;margin-right:8px">Rating:</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+            <span class="star" aria-hidden="true">★</span>
+          </div>
+          <p class="reviewQuote">“Write the customer comment here.”</p>
+          <div class="reviewMeta">
+            <span>— Customer name</span>
+            <span>Service</span>
+          </div>
+        </div>
       </div>
+
+      <p class="muted" style="margin-top:12px">
+        To change stars: set <b>data-stars="4"</b> or <b>data-stars="5"</b> in each review card.
+      </p>
     </section>
 
-    <!-- CONTACT (Formspree form) -->
+    <!-- CONTACT -->
     <section id="contact">
       <div class="glass card">
         <div class="sectionTitle">
@@ -579,17 +635,11 @@
 
             <b>Service area</b>
             <div class="muted">Tromsø + nearby areas</div>
-
-            <div class="line"></div>
-
-            <p class="muted" style="margin:0;font-size:.95rem">
-              Airbnb hosts: include check-in/check-out time and number of beds.
-            </p>
           </div>
 
-          <!-- Your Formspree endpoint is already connected. Keep your action URL here. -->
+          <!-- Formspree connected -->
           <form class="glass card" style="background:rgba(255,255,255,.05)"
-                action=https://formspree.io/f/xeelwrrg
+                action="https://formspree.io/f/xeelwrrg"
                 method="POST">
             <label for="name">Name</label>
             <input id="name" name="name" placeholder="Your name" required />
@@ -638,6 +688,20 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Render stars based on data-stars attribute (no extra libraries).
+    document.querySelectorAll(".stars").forEach(starRow => {
+      const rating = Math.max(0, Math.min(5, parseInt(starRow.getAttribute("data-stars") || "5", 10)));
+      const stars = Array.from(starRow.querySelectorAll(".star"));
+      stars.forEach((s, idx) => {
+        // selected if within rating
+        if (idx < rating) {
+          s.style.opacity = "0.95";
+        } else {
+          s.style.opacity = "0.25";
+        }
+      });
+    });
   </script>
 </body>
 </html>
