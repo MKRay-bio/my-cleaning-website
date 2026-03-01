@@ -7,7 +7,7 @@
   <meta name="description" content="Articpure provides professional home, office, move-in/out and Airbnb turnover cleaning in Tromsø. Fast quotes. Reliable results." />
 
   <meta property="og:title" content="Articpure | Cleaning in Tromsø" />
-  <meta property="og:description" content="Professional home, office & Airbnb turnover cleaning in Tromsø. Get a fast quote." />
+  <meta property="og:description" content="Professional home, office & Airbnb turnover cleaning in Tromsø. Get a free quote." />
   <meta property="og:type" content="website" />
 
   <style>
@@ -45,7 +45,6 @@
       box-shadow: var(--shadow);
     }
 
-    /* Header */
     header{
       position: sticky; top:0; z-index: 20;
       backdrop-filter: blur(12px);
@@ -104,7 +103,6 @@
     nav a:hover{color: var(--text)}
     .navBtns{display:flex; gap:10px; align-items:center}
 
-    /* Buttons */
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding: 11px 14px;
@@ -129,7 +127,6 @@
     }
     .btnSmall{padding: 9px 12px; font-size:.93rem}
 
-    /* Hero */
     .hero{
       padding: 34px 0 10px;
       display:grid;
@@ -163,7 +160,6 @@
     }
     .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px}
 
-    /* Hero image */
     .heroMedia{
       margin-top:16px;
       border-radius: 18px;
@@ -192,7 +188,6 @@
     .mini b{display:block; margin-bottom: 4px}
     .muted{color: var(--muted)}
 
-    /* Sections */
     section{padding: 14px 0}
     .sectionTitle{margin: 4px 0 10px}
     h2{margin:0; font-size: 1.45rem}
@@ -218,23 +213,9 @@
     }
     .line{height:1px; background: rgba(255,255,255,.10); margin: 12px 0}
 
-    /* Contact */
     .contactBlock b{display:block; margin-bottom: 4px}
     .contactLink{color: rgba(243,247,255,.92); text-decoration:none}
     .contactLink:hover{text-decoration:underline}
-
-    label{display:block; font-weight: 900; margin: 10px 0 6px}
-    input, textarea{
-      width: 100%;
-      padding: 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.22);
-      color: var(--text);
-      outline:none;
-      font: inherit;
-    }
-    textarea{min-height: 120px; resize: vertical}
 
     footer{
       padding: 26px 0 40px;
@@ -242,7 +223,6 @@
       font-size: .95rem;
     }
 
-    /* Responsive */
     @media (max-width: 1100px){
       .grid4{grid-template-columns: repeat(2, 1fr)}
     }
@@ -259,7 +239,8 @@
   <header>
     <div class="topbar">
       <div class="brand">
-        <img class="brandLogo" src="assets/logo.png" alt="Articpure logo" />
+        <!-- FIXED: logo is in repo root -->
+        <img class="brandLogo" src="logo.png" alt="Articpure logo" />
         <div class="brandName">
           <strong>Articpure</strong>
           <span>Cleaning & Airbnb turnover • Tromsø</span>
@@ -281,7 +262,6 @@
   </header>
 
   <main class="wrap">
-    <!-- HERO -->
     <section class="hero">
       <div class="glass heroCard">
         <div class="kicker">Cleaning • Airbnb turnover • Tromsø</div>
@@ -291,11 +271,9 @@
           We focus on detail, consistency, and clear communication — so you always know what to expect.
         </p>
 
-        <!-- IMPORTANT: space in filename is handled by %20 -->
+        <!-- FIXED: hero image is in repo root -->
         <div class="heroMedia">
-          <img src="assets/Modern%20spaces%20and%20pristine%20hero.png"
-               alt="Modern spaces and pristine cleaning"
-               loading="eager" />
+          <img src="hero.png" alt="Modern spaces and pristine cleaning" loading="eager" />
         </div>
 
         <div class="ctaRow">
@@ -332,7 +310,6 @@
       </div>
     </section>
 
-    <!-- SERVICES (no extra images) -->
     <section id="services">
       <div class="sectionTitle">
         <h2>Services</h2>
@@ -390,7 +367,6 @@
       </div>
     </section>
 
-    <!-- WHY US -->
     <section id="why">
       <div class="glass card">
         <div class="sectionTitle">
@@ -415,21 +391,17 @@
       </div>
     </section>
 
-    <!-- REVIEWS (EMPTY for real customers) -->
+    <!-- REVIEWS EMPTY -->
     <section id="reviews">
       <div class="sectionTitle">
         <h2>Reviews</h2>
         <p class="sub">Customer reviews will be added here.</p>
       </div>
-
       <div class="glass card" style="padding:18px">
-        <p class="muted" style="margin:0">
-          (Coming soon)
-        </p>
+        <p class="muted" style="margin:0">(Add your first customer review here)</p>
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact">
       <div class="glass card">
         <div class="sectionTitle">
@@ -462,22 +434,16 @@
             <div class="muted">Tromsø + nearby areas</div>
           </div>
 
-          <form class="glass card" style="background:rgba(255,255,255,.05)"
-                onsubmit="alert('This form is not connected yet. Use WhatsApp, call, or email. If you want, I can help you connect Formspree so this form sends to your email.'); return false;">
-            <label for="name">Name</label>
-            <input id="name" placeholder="Your name" required />
-
-            <label for="email">Email</label>
-            <input id="email" type="email" placeholder="you@example.com" required />
-
-            <label for="msg">Message</label>
-            <textarea id="msg" placeholder="Service (standard/deep/move-out/Airbnb), size (m²), address (optional), preferred date/time..." required></textarea>
-
+          <div class="glass card" style="background:rgba(255,255,255,.05)">
+            <h3 style="margin-top:0">Quick message</h3>
+            <p class="muted">For fastest reply, message us on WhatsApp:</p>
             <div class="ctaRow" style="margin-top:12px">
-              <button class="btn btnPrimary" type="submit">Send</button>
-              <a class="btn" href="mailto:mithlesh.hedmark@gmail.com?subject=Cleaning%20Quote%20Request%20-%20Articpure">Email instead</a>
+              <a class="btn btnPrimary" href="https://wa.me/4796987228" target="_blank" rel="noopener">WhatsApp (969 87 228)</a>
+              <a class="btn" href="https://wa.me/4741371988" target="_blank" rel="noopener">WhatsApp (413 71 988)</a>
             </div>
-          </form>
+            <div class="line"></div>
+            <p class="muted" style="margin:0;font-size:.95rem">Include: service type, size (m²), preferred date/time.</p>
+          </div>
         </div>
       </div>
     </section>
