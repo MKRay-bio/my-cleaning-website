@@ -7,7 +7,7 @@
   <meta name="description" content="Articpure provides professional home, office, move-in/out and Airbnb turnover cleaning in Tromsø. Fast quotes. Reliable results." />
 
   <meta property="og:title" content="Articpure | Cleaning in Tromsø" />
-  <meta property="og:description" content="Professional home, office & Airbnb turnover cleaning in Tromsø. Get a free quote." />
+  <meta property="og:description" content="Professional home, office & Airbnb turnover cleaning in Tromsø. Get a fast quote." />
   <meta property="og:type" content="website" />
 
   <style>
@@ -160,18 +160,27 @@
     }
     .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px}
 
+    /* Hero media (premium look) */
     .heroMedia{
       margin-top:16px;
       border-radius: 18px;
       overflow: hidden;
       border: 1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.05);
+      position: relative;
+    }
+    .heroMedia::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(11,18,32,.05), rgba(11,18,32,.55));
+      pointer-events:none;
     }
     .heroMedia img{
       width:100%;
       height: 340px;
       object-fit: cover;
       display:block;
+      filter: saturate(1.05) contrast(1.04);
     }
 
     .heroSide{
@@ -187,12 +196,15 @@
     }
     .mini b{display:block; margin-bottom: 4px}
     .muted{color: var(--muted)}
+    .contactLink{color: rgba(243,247,255,.92); text-decoration:none}
+    .contactLink:hover{text-decoration:underline}
 
     section{padding: 14px 0}
     .sectionTitle{margin: 4px 0 10px}
     h2{margin:0; font-size: 1.45rem}
     .sub{margin:6px 0 0; color: var(--muted)}
     .grid{display:grid; gap: 14px}
+    .grid2{grid-template-columns: repeat(2, 1fr)}
     .grid3{grid-template-columns: repeat(3, 1fr)}
     .grid4{grid-template-columns: repeat(4, 1fr)}
     .card{padding: 16px}
@@ -213,9 +225,33 @@
     }
     .line{height:1px; background: rgba(255,255,255,.10); margin: 12px 0}
 
-    .contactBlock b{display:block; margin-bottom: 4px}
-    .contactLink{color: rgba(243,247,255,.92); text-decoration:none}
-    .contactLink:hover{text-decoration:underline}
+    /* Secondary image section */
+    .featureMedia{
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+    }
+    .featureMedia img{
+      width:100%;
+      height: 260px;
+      object-fit: cover;
+      display:block;
+    }
+
+    /* Form */
+    label{display:block; font-weight: 900; margin: 10px 0 6px}
+    input, textarea{
+      width: 100%;
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.22);
+      color: var(--text);
+      outline:none;
+      font: inherit;
+    }
+    textarea{min-height: 120px; resize: vertical}
 
     footer{
       padding: 26px 0 40px;
@@ -223,14 +259,42 @@
       font-size: .95rem;
     }
 
+    /* Sticky WhatsApp */
+    .stickyWA{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 999;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      text-decoration:none;
+      font-weight: 950;
+      color:#06101b;
+      background: linear-gradient(135deg, var(--brand), var(--accent));
+      box-shadow: 0 18px 50px rgba(0,0,0,.45);
+    }
+    .stickyWA span{
+      display:inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 4px;
+      background: rgba(6,16,27,.18);
+    }
+    .stickyWA small{font-weight: 900; opacity: .82}
+
     @media (max-width: 1100px){
       .grid4{grid-template-columns: repeat(2, 1fr)}
     }
     @media (max-width: 980px){
       .hero{grid-template-columns: 1fr}
       nav{display:none}
-      .grid4,.grid3{grid-template-columns: 1fr}
+      .grid4,.grid3,.grid2{grid-template-columns: 1fr}
       .heroMedia img{height: 260px}
+      .featureMedia img{height: 220px}
+      .stickyWA{right: 14px; bottom: 14px}
     }
   </style>
 </head>
@@ -239,7 +303,7 @@
   <header>
     <div class="topbar">
       <div class="brand">
-        <img class="brandLogo" src="assets/logo.png?v=1" alt="Articpure logo" />
+        <img class="brandLogo" src="assets/logo.png?v=3" alt="Articpure logo" />
         <div class="brandName">
           <strong>Articpure</strong>
           <span>Cleaning & Airbnb turnover • Tromsø</span>
@@ -261,6 +325,7 @@
   </header>
 
   <main class="wrap">
+    <!-- HERO -->
     <section class="hero">
       <div class="glass heroCard">
         <div class="kicker">Cleaning • Airbnb turnover • Tromsø</div>
@@ -271,18 +336,20 @@
         </p>
 
         <div class="heroMedia">
-          <img src="assets/hero.png?v=1" alt="Modern spaces and pristine cleaning" loading="eager" />
+          <img src="assets/hero.png?v=3" alt="Modern spaces and pristine cleaning" loading="eager" />
         </div>
 
+        <!-- Cleaner CTA buttons (shorter) -->
         <div class="ctaRow">
-          <a class="btn btnPrimary" href="#contact">Get a free quote</a>
-
+          <a class="btn btnPrimary" href="https://wa.me/4796987228" target="_blank" rel="noopener">WhatsApp for Quote</a>
           <a class="btn" href="tel:+4796987228">Call: +47 969 87 228</a>
-          <a class="btn" href="https://wa.me/4796987228" target="_blank" rel="noopener">WhatsApp: +47 969 87 228</a>
-
-          <a class="btn" href="tel:+4741371988">Call: +47 413 71 988</a>
-          <a class="btn" href="https://wa.me/4741371988" target="_blank" rel="noopener">WhatsApp: +47 413 71 988</a>
+          <a class="btn" href="mailto:mithlesh.hedmark@gmail.com">Email</a>
         </div>
+        <p class="muted" style="margin:10px 0 0">
+          Second number:
+          <a class="contactLink" href="tel:+4741371988">+47 413 71 988</a> •
+          <a class="contactLink" href="https://wa.me/4741371988" target="_blank" rel="noopener">WhatsApp</a>
+        </p>
 
         <div class="ctaRow" style="margin-top:12px">
           <span class="tag">✅ Supplies included</span>
@@ -308,6 +375,20 @@
       </div>
     </section>
 
+    <!-- EXTRA IMAGE (Articpure.avif) -->
+    <section id="gallery">
+      <div class="glass card">
+        <div class="sectionTitle">
+          <h2>Our work</h2>
+          <p class="sub">A clean finish that feels fresh and welcoming.</p>
+        </div>
+        <div class="featureMedia">
+          <img src="assets/Articpure.avif?v=3" alt="Articpure cleaning result" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
     <section id="services">
       <div class="sectionTitle">
         <h2>Services</h2>
@@ -365,6 +446,7 @@
       </div>
     </section>
 
+    <!-- WHY US -->
     <section id="why">
       <div class="glass card">
         <div class="sectionTitle">
@@ -395,11 +477,12 @@
         <h2>Reviews</h2>
         <p class="sub">Add your real customer reviews here.</p>
       </div>
-      <div class="glass card" style="padding:18px">
-        <!-- Intentionally empty area for real reviews -->
+      <div class="glass card" style="padding:18px; min-height:90px; background:rgba(255,255,255,.05)">
+        <!-- Add real reviews here later -->
       </div>
     </section>
 
+    <!-- CONTACT (Form sends to email via Formspree) -->
     <section id="contact">
       <div class="glass card">
         <div class="sectionTitle">
@@ -407,22 +490,20 @@
           <p class="sub">Send a message with service type, size (m²), and preferred date/time.</p>
         </div>
 
-        <div class="grid" style="grid-template-columns: 1fr 1fr; gap:14px;">
-          <div class="glass card contactBlock" style="background:rgba(255,255,255,.05)">
-            <b>Email</b>
+        <div class="grid grid2">
+          <div class="glass card" style="background:rgba(255,255,255,.05)">
+            <b>Email</b><br/>
             <a class="contactLink" href="mailto:mithlesh.hedmark@gmail.com">mithlesh.hedmark@gmail.com</a>
 
             <div class="line"></div>
 
             <b>Call / WhatsApp</b>
-            <div class="muted">
-              <a class="contactLink" href="tel:+4796987228">+47 969 87 228</a>
-              <span class="muted"> • </span>
+            <div class="muted" style="margin-top:6px">
+              <a class="contactLink" href="tel:+4796987228">+47 969 87 228</a> •
               <a class="contactLink" href="https://wa.me/4796987228" target="_blank" rel="noopener">WhatsApp</a>
             </div>
             <div class="muted" style="margin-top:8px">
-              <a class="contactLink" href="tel:+4741371988">+47 413 71 988</a>
-              <span class="muted"> • </span>
+              <a class="contactLink" href="tel:+4741371988">+47 413 71 988</a> •
               <a class="contactLink" href="https://wa.me/4741371988" target="_blank" rel="noopener">WhatsApp</a>
             </div>
 
@@ -430,18 +511,43 @@
 
             <b>Service area</b>
             <div class="muted">Tromsø + nearby areas</div>
+
+            <div class="line"></div>
+
+            <p class="muted" style="margin:0;font-size:.95rem">
+              Airbnb hosts: include check-in/check-out time and number of beds.
+            </p>
           </div>
 
-          <div class="glass card" style="background:rgba(255,255,255,.05)">
-            <h3 style="margin-top:0">Quick message</h3>
-            <p class="muted">For fastest reply, message us on WhatsApp:</p>
+          <!-- IMPORTANT: Replace the action URL with your Formspree form endpoint -->
+          <form class="glass card" style="background:rgba(255,255,255,.05)"
+                action="https://formspree.io/f/PUT_YOUR_FORM_ID_HERE"
+                method="POST">
+            <label for="name">Name</label>
+            <input id="name" name="name" placeholder="Your name" required />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+            <label for="service">Service</label>
+            <input id="service" name="service" placeholder="Standard / Deep / Move-out / Airbnb" />
+
+            <label for="msg">Message</label>
+            <textarea id="msg" name="message" placeholder="Size (m²), address (optional), preferred date/time..." required></textarea>
+
+            <!-- Helpful info in the email -->
+            <input type="hidden" name="_subject" value="New quote request — Articpure" />
+            <input type="hidden" name="_replyto" value="%email%" />
+
             <div class="ctaRow" style="margin-top:12px">
-              <a class="btn btnPrimary" href="https://wa.me/4796987228" target="_blank" rel="noopener">WhatsApp (969 87 228)</a>
-              <a class="btn" href="https://wa.me/4741371988" target="_blank" rel="noopener">WhatsApp (413 71 988)</a>
+              <button class="btn btnPrimary" type="submit">Send</button>
+              <a class="btn" href="https://wa.me/4796987228" target="_blank" rel="noopener">WhatsApp instead</a>
             </div>
-            <div class="line"></div>
-            <p class="muted" style="margin:0;font-size:.95rem">Include: service type, size (m²), preferred date/time.</p>
-          </div>
+
+            <p class="muted" style="margin:10px 0 0; font-size:.95rem">
+              Tip: After you create your Formspree form, replace <b>PUT_YOUR_FORM_ID_HERE</b> in the action URL.
+            </p>
+          </form>
         </div>
       </div>
     </section>
@@ -451,6 +557,12 @@
       © <span id="year"></span> Articpure • Tromsø
     </footer>
   </main>
+
+  <!-- Sticky WhatsApp button -->
+  <a class="stickyWA" href="https://wa.me/4796987228" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <span aria-hidden="true"></span>
+    WhatsApp <small>Quote</small>
+  </a>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
